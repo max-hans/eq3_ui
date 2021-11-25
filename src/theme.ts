@@ -15,6 +15,18 @@ const theme = extendTheme({
       5: "#72efddff",
     },
   },
+  components: {
+    Button: {
+      variants: {
+        thomas: {
+          h: "50px",
+          flex: "1",
+          color: "teal.300",
+          bg: "gray.50",
+        }
+      }
+    }
+  }
 });
 
 export default theme;
