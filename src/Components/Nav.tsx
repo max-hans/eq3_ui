@@ -3,7 +3,7 @@ import React from "react";
 import { Box, HStack, Spacer, useColorModeValue } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 interface NavProps {
-  children: React.ReactNode;
+  children: React.ReactChild[];
 }
 
 const Nav: React.FC<NavProps> = ({ children }) => {
