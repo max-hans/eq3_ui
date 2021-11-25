@@ -2,38 +2,37 @@ import React from "react";
 
 import HeaterDisplay from "../.././Components/HeaterDisplay"
 
-import {Spacer, Button, Box, HStack, VStack, Center } from "@chakra-ui/react";
+import { Spacer, Button, Box, HStack, VStack, Center } from "@chakra-ui/react";
 
 const getHeaters = () => { //API oder so
   return [
-    {room: "Wohnzimmer", temperature: (18 + Math.random()*6).toFixed(1)},
-    {room: "Esszimmer", temperature: (18 + Math.random()*6).toFixed(1)},
-    {room: "Schlafzimmer", temperature: (18 + Math.random()*6).toFixed(1)},
-    {room: "Küche", temperature: (18 + Math.random()*6).toFixed(1)},
-    {room: "Arbeitszimmer", temperature: (18 + Math.random()*6).toFixed(1)},
+    { room: "Wohnzimmer", temperature: (18 + Math.random() * 6).toFixed(1) },
+    { room: "Esszimmer", temperature: (18 + Math.random() * 6).toFixed(1) },
+    { room: "Schlafzimmer", temperature: (18 + Math.random() * 6).toFixed(1) },
+    { room: "Küche", temperature: (18 + Math.random() * 6).toFixed(1) },
+    { room: "Arbeitszimmer", temperature: (18 + Math.random() * 6).toFixed(1) },
   ]
 }
 
-const Heaters = (props) => {
+const Heaters = () => {
 
   const heaterList = getHeaters();
 
-  const heaters = heaterList.map((heater) => {
-     console.log(heater)
-    return <HeaterDisplay key={heater.room} room={heater.room} temperature={heater.temperature}/>
-  })
 
-  return(
-    <Box overflow="scroll" gridArea="content" w="100%" h="85vh" p={5}>
-    <VStack>
-      {heaters}
+  return (
+    <VStack gridArea="content" w="100%" p={8}>
+      <VStack>
+        {heaterList.map((heater) => {
+          console.log(heater)
+          return <HeaterDisplay room={heater.room} temperature={heater.temperature} />
+        })}
+      </VStack>
+      <HStack p={8} spacing={4} w="100%">
+        <Button variant="thomas" flex="1">🧊️</Button>
+        <Button variant="thomas" flex="1">+</Button>
+        <Button variant="thomas" flex="1">🔥</Button>
+      </HStack>
     </VStack>
-    <HStack m={5} spacing={3} >
-        <Button h="50px" flex="1" color="teal.300" bg="gray.50" width="20%">🧊️</Button>
-        <Button h="50px" flex="1" color="teal.300" bg="gray.50" width="20%">+</Button>
-        <Button h="50px" flex="1" color="teal.300" bg="gray.50" width="20%">🔥</Button>
-    </HStack>
- </Box>
   )
 }
 
