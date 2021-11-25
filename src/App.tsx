@@ -25,12 +25,12 @@ const App = () => {
         <Grid
           templateRows="auto 1fr auto"
           templateAreas={templateAreas}
-          h="100"
+          h="100vh"
           w="100vw"
           m={0}
         >
           <Nav>
-            <Link fontWeight="bold"  as={RouterLink} to="/">
+            <Link fontWeight="bold" as={RouterLink} to="/">
               Räume
             </Link>
             <Link as={RouterLink} to="/settings">
@@ -42,7 +42,7 @@ const App = () => {
               <Settings />
             </Route>
             <Route path="/">
-              <Heaters/>
+              <Heaters />
             </Route>
           </Switch>
         </Grid>
